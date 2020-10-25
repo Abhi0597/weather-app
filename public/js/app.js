@@ -13,7 +13,7 @@ formsel.addEventListener('submit',(e)=>{
 const fetchDetails = (val)=>{
 msg_1.textContent='Loading...';
 msg_2.textContent='';
-fetch("http://localhost:3000/weather?address="+val).then((response)=>{
+fetch("/weather?address="+val).then((response)=>{
     response.json().then((data)=>{
         if(data.error){
             msg_1.textContent = data.error;

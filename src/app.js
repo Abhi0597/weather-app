@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 const app = express();
+const port = process.env.port || 3000;
 console.log(__dirname);
 app.set('view engine','hbs')
 const partital_path = path.join(__dirname,'../templates/partitals');
@@ -72,6 +73,6 @@ app.get('/help/*',(req,res)=>{
     })
   });
 
-app.listen(3000,()=>{
-    console.log('Listening to port 3000');
+app.listen(port,()=>{
+    console.log('Listening to port'+port);
 })
